@@ -6,13 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StudentGroupService {
-    private final StudentGroup studentGroup = new StudentGroup(List.of(
-            new Student(0L, "Pavel", "Ivanov", ""),
-            new Student(115616598L, "Mihail", "Petrov", ""),
-            new Student(565L, "Aleksandra", "Anisimova", ""),
-            new Student(4587565L, "Maksim", "Antonov", "Petrovich"),
-            new Student(45L, "Maksim", "Antonov", "Sergeevich")
-    ));
+    private final StudentGroup studentGroup = new StudentGroup();
     public void removeStudentByFIO(String firstName, String lastName, String middleName) {
         Iterator<Student> iterator = studentGroup.iterator();
         while (iterator.hasNext()) {
@@ -29,7 +23,10 @@ public class StudentGroupService {
     }
     public List<Student> getSortedStudentListByFIO () {
         List<Student> list = new ArrayList<>(studentGroup.getStudentList());
-        list.sort(new StudentComparator());
+        list.sort(new UserComparator<Student>());
         return list;
+    }
+    public void createStudent(String firstName, String lastName, String middleName) {
+        studentGroup.createStudent(firstName, lastName, middleName);
     }
 }
