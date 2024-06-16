@@ -1,4 +1,6 @@
-package com.alena;
+package com.alena.utils;
+
+import com.alena.model.User;
 
 import java.util.Comparator;
 

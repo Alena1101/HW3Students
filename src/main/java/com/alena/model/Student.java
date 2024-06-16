@@ -1,16 +1,17 @@
-package com.alena;
+package com.alena.model;
 
 public class Student extends User implements Comparable <Student>{
-    public Long getStudentId() {
+    @Override
+    public long getId() {
         return studentId;
     }
 
 
 
-    private Long studentId;
+    private final long studentId;
 
 
-    public Student(Long studentId, String firstName, String lastName, String middleName) {
+    public Student(long studentId, String firstName, String lastName, String middleName) {
         super(firstName,lastName, middleName);
         this.studentId = studentId;
 
@@ -20,7 +21,7 @@ public class Student extends User implements Comparable <Student>{
 
     @Override
     public int compareTo(Student o) {
-        return studentId.compareTo(o.getStudentId());
+        return Long.compare(studentId, o.getId());
     }
 
     @Override

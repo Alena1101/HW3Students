@@ -1,4 +1,6 @@
-package com.alena;
+package com.alena.view;
+
+import com.alena.model.User;
 
 import java.util.List;
 

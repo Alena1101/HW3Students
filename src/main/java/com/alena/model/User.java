@@ -1,7 +1,7 @@
-package com.alena;
+package com.alena.model;
 
-public class User {
-    public User(String firstName, String lastName, String middleName) {
+public abstract class User {
+    public  User(String firstName, String lastName, String middleName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.middleName = middleName;
@@ -34,4 +34,11 @@ public class User {
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
     }
+// Класс User теперь абстрактный и может содержать абстрактные методы,
+// которые общие для всех наследников класса User.
+// Метод getId реализуется в наследниках.
+
+
+    public abstract long getId();
+
 }

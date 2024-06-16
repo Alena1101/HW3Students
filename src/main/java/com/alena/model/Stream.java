@@ -1,4 +1,4 @@
-package com.alena;
+package com.alena.model;
 
 import java.util.Iterator;
 import java.util.List;

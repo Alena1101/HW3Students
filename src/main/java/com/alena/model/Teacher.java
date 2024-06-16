@@ -1,8 +1,8 @@
-package com.alena;
+package com.alena.model;
 
 import java.util.Random;
 
-public class Teacher extends User{
+public class Teacher extends User {
     private final long teacherId;
 
     @Override
@@ -16,7 +16,8 @@ public class Teacher extends User{
         return sb.toString();
     }
 
-    public long getTeacherId() {
+    @Override
+    public long getId() {
         return teacherId;
     }
 
